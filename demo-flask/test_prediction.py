@@ -1,6 +1,6 @@
 import requests
 
-url = "http://127.0.0.1:5004/prediction"  # Replace with your actual API endpoint
+url = "http://127.0.0.1:5003/prediction"  # Replace with your actual API endpoint
 
 data = {
     "sepal-length": 4.4,

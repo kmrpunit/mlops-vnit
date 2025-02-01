@@ -55,4 +55,4 @@ def training():
     return {"training": 70, "testing": 30, "accuracy": accuracy_score(y_test, y_pred) * 100}
 
 if __name__ == "__main__":
-    app.run(port=5000)
+    app.run(port=5003)
