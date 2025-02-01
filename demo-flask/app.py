@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 import pickle
 import numpy
 import pandas as pd
@@ -20,7 +20,7 @@ def get_status():
 @app.route("/prediction", methods=["POST"]) 
 def prediction(): 
     payload = request.json 
-    X_unknown = [payload["sepal-length"],payload["sepal-width"],payload["petal-lenght"],payload["petal-width"]] 
+    X_unknown = [payload["sepal-length"],payload["sepal-width"],payload["petal-length"],payload["petal-width"]] 
     X_unknown = numpy.array(X_unknown).reshape(1,-1)
     
     with open("./model/iris_classifier.pkl", "rb") as f:
