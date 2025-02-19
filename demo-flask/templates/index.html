@@ -72,7 +72,7 @@
         }
 
         function startTraining() {
-            fetch('/training', { method: 'POST' })
+            fetch('/training', { method: 'GET' })
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('result').innerText = JSON.stringify(data);
@@ -86,7 +86,7 @@
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ input: inputData })
+                body: JSON.stringify(inputData)
             })
                 .then(response => response.json())
                 .then(data => {
