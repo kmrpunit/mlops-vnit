@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import pickle
 import numpy
 import pandas as pd
@@ -54,5 +54,9 @@ def training():
         pickle.dump(clf, f)
     return {"training": 70, "testing": 30, "accuracy": accuracy_score(y_test, y_pred) * 100}
 
+@app.route("/", methods=["GET"])
+def index():
+    return render_template("index.html")
+
 if __name__ == "__main__":
-    app.run(port=5003)
+    app.run(host='0.0.0.0', port=5004)
